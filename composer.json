@@ -34,6 +34,7 @@
         "sort-packages": true
     },
     "scripts": {
-        "test": "phpunit"
+        "test": "phpunit",
+        "docs:build": "apidoc -i app/Controllers/Api -o public/docs"
     }
 }
