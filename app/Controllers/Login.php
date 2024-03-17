@@ -77,6 +77,7 @@ class Login extends BaseController
       "iat" => $iat, //Time the JWT issued at
       "exp" => $exp, // Expiration time of token
       "email" => $user['email'],
+      "userid" => $user['id'],
     );
 
     $token = JWT::encode($payload, $key, 'HS256');

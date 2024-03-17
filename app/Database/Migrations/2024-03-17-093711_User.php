@@ -18,6 +18,7 @@ class User extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => '64',
                 'unique' => true,
+                'null' => true,
             ],
             'status' => [
                 'type' => 'ENUM',
@@ -75,6 +76,11 @@ class User extends Migration
                 'constraint' => '16',
                 'null'    => true,
             ],
+            'avatar' => [
+                'type' => 'VARCHAR',
+                'constraint' => '255',
+                'null' => true,
+            ],
             'email' => [
                 'type' => 'VARCHAR',
                 'unique' => true,
@@ -89,6 +95,7 @@ class User extends Migration
             'updated_at timestamp ON UPDATE CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP',
         ]);
         $this->forge->addPrimaryKey('id');
+        $this->forge->addKey('status');
         $this->forge->createTable('users');
     }
 

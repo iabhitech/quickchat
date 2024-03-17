@@ -73,10 +73,12 @@ class Register extends BaseController
 
 
     if ($this->validate($rules)) {
+      $username = $this->request->getVar('username') ?? NULL;
       $model = new UserModel();
       $data = [
         'firstname' => $this->request->getVar('firstname') ?? '',
         'lastname'  => $this->request->getVar('lastname') ?? '',
+        'username'  => $username != '' ? $username : NULL,
         'email'    => $this->request->getVar('email'),
         'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
       ];
