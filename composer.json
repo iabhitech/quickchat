@@ -11,7 +11,8 @@
     },
     "require": {
         "php": "^7.4 || ^8.0",
-        "codeigniter4/framework": "^4.0"
+        "codeigniter4/framework": "^4.0",
+        "firebase/php-jwt": "^6.10"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9",
@@ -36,6 +37,6 @@
     "scripts": {
         "test": "phpunit",
         "start": "php spark serve",
-        "docs:build": "apidoc -i app/Controllers/Api/ -o public/docs/ -t app/ThirdParty/apidoc/template/"
+        "docs:build": "apidoc -i app/Controllers/ -o public/docs/ -t app/ThirdParty/apidoc/template/"
     }
 }

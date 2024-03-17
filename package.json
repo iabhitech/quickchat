@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start": "php spark serve",
-    "docs:build": "apidoc -i app/Controllers/Api/ -o public/docs/ -t app/ThirdParty/apidoc/template/"
+    "docs:build": "apidoc -i app/Controllers/ -o public/docs/ -t app/ThirdParty/apidoc/template/"
   },
   "author": "Abhineet Verma",
   "license": "ISC",
