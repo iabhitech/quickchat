@@ -1,0 +1,17 @@
+{
+  "name": "quickchat",
+  "version": "1.0.0",
+  "description": "## What is CodeIgniter?",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "php spark serve",
+    "docs:build": "apidoc -i app/Controllers/Api/ -o public/docs/ -t app/ThirdParty/apidoc/template/"
+  },
+  "author": "Abhineet Verma",
+  "license": "ISC",
+  "devDependencies": {
+    "apidoc": "^1.2.0"
+  }
+}

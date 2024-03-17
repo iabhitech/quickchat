@@ -35,6 +35,7 @@
     },
     "scripts": {
         "test": "phpunit",
-        "docs:build": "apidoc -i app/Controllers/Api -o public/docs"
+        "start": "php spark serve",
+        "docs:build": "apidoc -i app/Controllers/Api/ -o public/docs/ -t app/ThirdParty/apidoc/template/"
     }
 }
