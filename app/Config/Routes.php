@@ -45,4 +45,9 @@ $routes->group("api/v1", function ($routes) {
     $routes->post("(:num)/members", "Room::addMember/$1", ['filter' => 'authFilter']);
     $routes->delete("(:num)/members", "Room::removeMember/$1", ['filter' => 'authFilter']);
   });
+
+  $routes->group("messages", function($routes) {
+    $routes->get("(:num)", "Message::index/$1", ['filter' => 'authFilter']);
+    $routes->post("(:num)", "Message::create/$1", ['filter' => 'authFilter']);
+  });
 });

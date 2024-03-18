@@ -173,6 +173,15 @@ class Room extends BaseController
             'status' => 'active', // default status is 'active'
             'created_by' => $this->auth->userid,
         ]);
+
+        $roomId = $roomModel->getInsertID();
+        $memberModel = new MemberModel();
+        $memberModel->insert([
+            'room_id' => $roomId,
+            'user_id' => $this->auth->userid,
+            'status' => 'active', // default status is 'active'
+            'created_by' => $this->auth->userid,
+        ]);
         return $this->respond(['message' => 'Room is created successfully.'], ResponseInterface::HTTP_OK);
     }
 
