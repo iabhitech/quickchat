@@ -33,4 +33,16 @@ $routes->group("api/v1", function ($routes) {
     $routes->put("(:num)", "Friend::update/$1", ['filter' => 'authFilter']);
     $routes->delete("(:num)", "Friend::remove/$1", ['filter' => 'authFilter']);
   });
+
+  $routes->group("rooms", function($routes) {
+    $routes->get("/", "Room::index", ['filter' => 'authFilter']);
+    $routes->get("(:num)", "Room::get/$1", ['filter' => 'authFilter']);
+    $routes->post("/", "Room::create", ['filter' => 'authFilter']);
+    $routes->put("(:num)", "Room::update/$1", ['filter' => 'authFilter']);
+    $routes->delete("(:num)", "Room::remove/$1", ['filter' => 'authFilter']);
+
+    $routes->get("(:num)/members", "Room::getMembers/$1", ['filter' => 'authFilter']);
+    $routes->post("(:num)/members", "Room::addMember/$1", ['filter' => 'authFilter']);
+    $routes->delete("(:num)/members", "Room::removeMember/$1", ['filter' => 'authFilter']);
+  });
 });
